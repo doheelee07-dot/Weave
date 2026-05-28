@@ -8,14 +8,25 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --ivory:#F2EDE4;--ivory-card:#FDFAF6;
-  --sage:#7BA99A;--sage-light:#EDF4F2;--sage-mid:#C8DDD9;
-  --slate:#4A6FA5;--slate-light:#EEF2F8;
-  --sand:#C9A97A;--sand-light:#F5ECD8;
-  --navy:#2B3F5C;--navy-light:#E8ECF2;
-  --cta:#1D9E75;--cta-deep:#0F6E56;--cta-light:#E1F5EE;
-  --amber:#EF9F27;--amber-light:#FAEEDA;--coral:#D85A30;--coral-light:#FAECE7;
-  --mid:#6B7280;--border:#D9D3CA;
+  /* 메인 그린 팔레트 */
+  --sage:#8A9A5B;--sage-light:#EEF2E0;--sage-mid:#C5CE9A;
+  --mint:#C8E6C9;--mint-light:#F1F8F1;
+  --olive:#55692F;--olive-dark:#3A4A1E;
+  --seafoam:#9FE2BF;--seafoam-light:#E6F7EE;
+  /* 보조색: 갈색(주) > 파란색(부) > 주황(소) */
+  --brown:#7A5C3A;--brown-light:#F2E8DA;--brown-mid:#C4A882;
+  --slate:#4A6FA5;--slate-light:#E8EFF8;--slate-mid:#8FADD4;
+  --amber:#D4831A;--amber-light:#FBF0DB;
+  /* 배경 / 카드 */
+  --ivory:#F4F5EE;--ivory-card:#FBFCF5;
+  /* 텍스트 */
+  --navy:#2A3820;--navy-light:#EAF0E0;
+  /* CTA = 올리브그린 */
+  --cta:#4E7A25;--cta-deep:#335212;--cta-light:#E8F2D6;
+  /* 유지 */
+  --coral:#C94F2A;--coral-light:#FAEAE4;
+  --sand:#7A5C3A;--sand-light:#F2E8DA;
+  --mid:#6A7055;--border:#CDD0B4;
   --r:14px;--r-sm:10px;
 }
 html{scroll-behavior:smooth;}
@@ -42,7 +53,7 @@ header.scrolled{border-color:var(--border);box-shadow:0 2px 16px rgba(43,63,92,.
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .logo-word{font-size:19px;font-weight:700;color:var(--navy);letter-spacing:-.03em;}
 .nav-right{display:flex;align-items:center;gap:12px;}
-#hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(155deg,var(--ivory) 45%,var(--sage-light) 100%);padding:120px 0 80px;}
+#hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(155deg,var(--ivory) 40%,var(--sage-light) 80%,var(--mint-light) 100%);padding:120px 0 80px;}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 .hero-badge{background:var(--cta-light);color:var(--cta-deep);margin-bottom:20px;}
 .hero-title{color:var(--navy);margin-bottom:16px;}
@@ -65,10 +76,10 @@ section{padding:96px 0;}
 .section-sub{font-size:17px;max-width:560px;margin-bottom:48px;}
 #pain{background:var(--ivory-card);}
 .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.pain-card{background:var(--sand-light);border-radius:var(--r);padding:28px 24px;border:1px solid #E8D9C0;}
+.pain-card{background:var(--brown-light);border-radius:var(--r);padding:28px 24px;border:1px solid #DDD0BE;}
 .pain-emoji{font-size:32px;margin-bottom:14px;display:block;}
 .pain-card h3{font-size:16px;color:var(--navy);margin-bottom:8px;line-height:1.4;}
-.pain-card p{font-size:14px;color:#8A6E44;}
+.pain-card p{font-size:14px;color:var(--brown);}
 #solution{background:var(--sage-light);}
 .sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
 .sol-card{background:var(--ivory-card);border-radius:var(--r);padding:28px 22px;border:1px solid var(--border);}
@@ -89,11 +100,11 @@ section{padding:96px 0;}
 .trust-badge{display:flex;align-items:center;gap:10px;background:var(--ivory-card);border:1px solid var(--border);border-radius:var(--r);padding:16px 24px;font-size:15px;font-weight:600;color:var(--navy);}
 .trust-check{width:28px;height:28px;border-radius:50%;background:var(--cta);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;font-weight:700;}
 .trust-note{text-align:center;font-size:14px;color:var(--mid);max-width:520px;margin:0 auto;}
-#signup{background:var(--navy);}
+#signup{background:var(--olive-dark);}
 #signup .section-label{color:var(--sage);}
 #signup .section-title{color:#fff;}
 .signup-form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:36px;text-align:center;}
-footer{background:var(--navy);padding:60px 0 32px;}
+footer{background:var(--olive-dark);padding:60px 0 32px;}
 .footer-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;margin-bottom:40px;}
 .footer-brand .logo-word{color:#fff;font-size:16px;}
 .footer-tagline{color:rgba(255,255,255,.55);font-size:13px;margin-top:4px;}
@@ -144,8 +155,8 @@ footer{background:var(--navy);padding:60px 0 32px;}
 .diff-pill span{display:block;font-size:11px;font-weight:400;margin-top:2px;}
 .diff-pill.no{background:#F5F1ED;color:#9A8070;border:1px solid #E5DDD4;}
 .diff-pill.no span{color:#B8ADA4;}
-.diff-pill.yes{background:var(--cta-light);color:var(--cta-deep);border:1px solid #9FE1CB;}
-.diff-pill.yes span{color:#3A7D63;}
+.diff-pill.yes{background:var(--cta-light);color:var(--cta-deep);border:1px solid #9FD0A0;}
+.diff-pill.yes span{color:#3A5C20;}
 @media(max-width:900px){.fc-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:760px){
   .hero-grid{grid-template-columns:1fr;gap:48px;}
@@ -184,8 +195,8 @@ footer{background:var(--navy);padding:60px 0 32px;}
   <div class="header-inner">
     <a href="#" class="logo" aria-label="Weave 홈으로">
       <svg width="38" height="30" viewBox="0 0 40 32" fill="none" aria-hidden="true">
-        <path d="M4 4 Q8 16 12 20 Q14 22 16 20 Q18 18 20 24 Q22 30 24 28" stroke="#7BA99A" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/>
-        <path d="M10 4 Q14 14 18 20 Q20 24 22 20 Q24 16 26 20 Q28 24 30 28" stroke="#C9A97A" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/>
+        <path d="M4 4 Q8 16 12 20 Q14 22 16 20 Q18 18 20 24 Q22 30 24 28" stroke="#8A9A5B" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/>
+        <path d="M10 4 Q14 14 18 20 Q20 24 22 20 Q24 16 26 20 Q28 24 30 28" stroke="#7A5C3A" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/>
         <path d="M18 4 Q22 14 26 20 Q28 24 30 20 Q32 16 36 28" stroke="#4A6FA5" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/>
       </svg>
       <span class="logo-word">weave</span>
@@ -212,8 +223,8 @@ footer{background:var(--navy);padding:60px 0 32px;}
       <div class="hero-visual fade-up" style="transition-delay:.15s;">
         <div class="hero-symbol-wrap" aria-hidden="true">
           <svg width="120" height="96" viewBox="0 0 40 32" fill="none">
-            <path d="M4 4 Q8 16 12 20 Q14 22 16 20 Q18 18 20 24 Q22 30 24 28" stroke="#7BA99A" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.9"/>
-            <path d="M10 4 Q14 14 18 20 Q20 24 22 20 Q24 16 26 20 Q28 24 30 28" stroke="#C9A97A" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+            <path d="M4 4 Q8 16 12 20 Q14 22 16 20 Q18 18 20 24 Q22 30 24 28" stroke="#8A9A5B" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+            <path d="M10 4 Q14 14 18 20 Q20 24 22 20 Q24 16 26 20 Q28 24 30 28" stroke="#7A5C3A" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.9"/>
             <path d="M18 4 Q22 14 26 20 Q28 24 30 20 Q32 16 36 28" stroke="#4A6FA5" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.9"/>
           </svg>
           <div class="hero-float hf1" aria-hidden="true"><span class="hf-dot" style="background:var(--cta);"></span>활동가 연결됨</div>
@@ -298,7 +309,7 @@ footer{background:var(--navy);padding:60px 0 32px;}
     </div>
     <div class="fc-grid fade-up" style="transition-delay:.1s;">
       <button class="fc-card" onclick="openSim('network')" aria-label="케어 네트워크 관계맵 체험하기"><div class="fc-icon" style="background:var(--cta-light);">🌐</div><div class="fc-kicker" style="color:var(--cta);">케어 네트워크</div><h3 class="fc-title">아이를 중심으로<br>모두가 연결돼요</h3><p class="fc-desc">활동가·치료사·선생님·가족이 하나의 관계 지도 위에 연결돼요.</p><div class="fc-cta">체험해보기 →</div></button>
-      <button class="fc-card" onclick="openSim('trust')" aria-label="활동가 신뢰 온도 체험하기"><div class="fc-icon" style="background:var(--amber-light);">🌡</div><div class="fc-kicker" style="color:var(--amber);">신뢰 온도</div><h3 class="fc-title">온도 하나로<br>신뢰도를 파악해요</h3><p class="fc-desc">별점·재매칭·자격증이 하나의 체온 수치로 통합돼요.</p><div class="fc-cta">체험해보기 →</div></button>
+      <button class="fc-card" onclick="openSim('trust')" aria-label="활동가 신뢰 성장 체험하기"><div class="fc-icon" style="background:var(--cta-light);">🌱</div><div class="fc-kicker" style="color:var(--cta);">신뢰 성장</div><h3 class="fc-title">씨앗에서 나무로<br>신뢰가 자라요</h3><p class="fc-desc">별점·재매칭·자격증이 쌓일수록 씨앗이 새싹, 나무로 성장해요.</p><div class="fc-cta">체험해보기 →</div></button>
       <button class="fc-card" onclick="openSim('calendar')" aria-label="공유 캘린더 체험하기"><div class="fc-icon" style="background:var(--slate-light);">📅</div><div class="fc-kicker" style="color:var(--slate);">공유 캘린더</div><h3 class="fc-title">일정·특이사항을<br>모두가 함께 봐요</h3><p class="fc-desc">치료·활동 일정과 건강 기록을 케어팀 전체가 공유해요.</p><div class="fc-cta">체험해보기 →</div></button>
       <button class="fc-card" onclick="openSim('ai')" aria-label="AI 성장 분석 체험하기"><div class="fc-icon" style="background:var(--sage-light);">✨</div><div class="fc-kicker" style="color:var(--sage);">AI 성장 분석</div><h3 class="fc-title">기록이 쌓일수록<br>인사이트가 선명해져요</h3><p class="fc-desc">케어팀 기록을 AI가 통합 분석해 성장 패턴을 발견해드려요.</p><div class="fc-cta">체험해보기 →</div></button>
       <button class="fc-card" onclick="openSim('memo')" aria-label="케어팀 확인 메모 체험하기"><div class="fc-icon" style="background:var(--slate-light);">📋</div><div class="fc-kicker" style="color:var(--slate);">확인 메모</div><h3 class="fc-title">부모님 관점도<br>분석에 반영돼요</h3><p class="fc-desc">케어팀 기록에 부모님이 직접 동의하거나 다른 관점을 추가해요.</p><div class="fc-cta">체험해보기 →</div></button>
@@ -311,7 +322,7 @@ footer{background:var(--navy);padding:60px 0 32px;}
   <div id="sim-shell" style="background:var(--ivory);border-radius:28px;overflow:hidden;width:100%;max-width:400px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(20,30,50,.35);">
     <div style="background:var(--ivory-card);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
       <div style="display:flex;align-items:center;gap:8px;">
-        <svg width="24" height="19" viewBox="0 0 40 32" fill="none" aria-hidden="true"><path d="M4 4 Q8 16 12 20 Q14 22 16 20 Q18 18 20 24 Q22 30 24 28" stroke="#7BA99A" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/><path d="M10 4 Q14 14 18 20 Q20 24 22 20 Q24 16 26 20 Q28 24 30 28" stroke="#C9A97A" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/><path d="M18 4 Q22 14 26 20 Q28 24 30 20 Q32 16 36 28" stroke="#4A6FA5" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/></svg>
+        <svg width="24" height="19" viewBox="0 0 40 32" fill="none" aria-hidden="true"><path d="M4 4 Q8 16 12 20 Q14 22 16 20 Q18 18 20 24 Q22 30 24 28" stroke="#8A9A5B" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/><path d="M10 4 Q14 14 18 20 Q20 24 22 20 Q24 16 26 20 Q28 24 30 28" stroke="#7A5C3A" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/><path d="M18 4 Q22 14 26 20 Q28 24 30 20 Q32 16 36 28" stroke="#4A6FA5" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/></svg>
         <span style="font-size:14px;font-weight:700;color:var(--navy);" id="sim-title">weave</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -339,7 +350,7 @@ footer{background:var(--navy);padding:60px 0 32px;}
       <div class="diff-header">
         <div class="diff-col-feature"></div>
         <div class="diff-col-others"><span class="diff-col-label others-lbl">기존 서비스</span></div>
-        <div class="diff-col-weave"><div style="display:flex;align-items:center;gap:7px;justify-content:center;"><svg width="20" height="16" viewBox="0 0 40 32" fill="none" aria-hidden="true"><path d="M4 4 Q8 16 12 20 Q14 22 16 20 Q18 18 20 24 Q22 30 24 28" stroke="#7BA99A" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9"/><path d="M10 4 Q14 14 18 20 Q20 24 22 20 Q24 16 26 20 Q28 24 30 28" stroke="#C9A97A" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9"/><path d="M18 4 Q22 14 26 20 Q28 24 30 20 Q32 16 36 28" stroke="#4A6FA5" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9"/></svg><span class="diff-col-label weave-lbl">Weave</span></div></div>
+        <div class="diff-col-weave"><div style="display:flex;align-items:center;gap:7px;justify-content:center;"><svg width="20" height="16" viewBox="0 0 40 32" fill="none" aria-hidden="true"><path d="M4 4 Q8 16 12 20 Q14 22 16 20 Q18 18 20 24 Q22 30 24 28" stroke="#8A9A5B" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9"/><path d="M10 4 Q14 14 18 20 Q20 24 22 20 Q24 16 26 20 Q28 24 30 28" stroke="#7A5C3A" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9"/><path d="M18 4 Q22 14 26 20 Q28 24 30 20 Q32 16 36 28" stroke="#4A6FA5" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9"/></svg><span class="diff-col-label weave-lbl">Weave</span></div></div>
       </div>
       <div class="diff-row fade-up"><div class="diff-col-feature"><div class="diff-feat-icon" style="background:var(--cta-light);">🧩</div><div><div class="diff-feat-title">발달장애 특화</div><div class="diff-feat-sub">감각·특성 기반 구조</div></div></div><div class="diff-col-others"><div class="diff-pill no">✗ 일반 아동 대상<br><span>특성 기반 기록 구조 없음</span></div></div><div class="diff-col-weave"><div class="diff-pill yes">✓ 감각 특성·선호·주의사항<br><span>아이 중심 프로필 구조</span></div></div></div>
       <div class="diff-row fade-up" style="transition-delay:.05s;"><div class="diff-col-feature"><div class="diff-feat-icon" style="background:var(--slate-light);">💬</div><div><div class="diff-feat-title">인터랙티브 기록</div><div class="diff-feat-sub">부모 참여형 피드백</div></div></div><div class="diff-col-others"><div class="diff-pill no">✗ 단방향 기록<br><span>교사→부모 전달만 가능</span></div></div><div class="diff-col-weave"><div class="diff-pill yes">✓ 부모가 직접 확인·피드백<br><span>AI 분석에 양방향 반영</span></div></div></div>
@@ -466,7 +477,7 @@ function renderSim(id) {
 
 /* ── 관계맵 ── */
 function simNetwork(el) {
-  el.innerHTML = '<div style="padding:14px 14px 0;"><div class="sim-topbar"><span class="sim-screen-title">케어 네트워크</span><span style="font-size:12px;color:var(--mid);">연결된 관계자 7명</span></div><p style="font-size:12px;color:var(--mid);margin-bottom:10px;">노드를 탭해 관계자 정보를 확인해보세요.</p></div><div style="position:relative;background:var(--sage-light);margin:0 14px;border-radius:14px;overflow:hidden;"><svg viewBox="0 0 320 280" style="width:100%;display:block;"><line x1="160" y1="130" x2="160" y2="44" stroke="#1D9E75" stroke-width="1.5"/><line x1="160" y1="130" x2="76" y2="84" stroke="#1D9E75" stroke-width="1.5"/><line x1="160" y1="130" x2="244" y2="84" stroke="#1D9E75" stroke-width="1.5"/><line x1="160" y1="130" x2="54" y2="174" stroke="#4A6FA5" stroke-width="1.5"/><line x1="160" y1="130" x2="266" y2="174" stroke="#4A6FA5" stroke-width="1.5"/><line x1="160" y1="130" x2="96" y2="236" stroke="#2B3F5C" stroke-width="1.5"/><line x1="160" y1="130" x2="224" y2="236" stroke="#2B3F5C" stroke-width="1.5"/><line x1="160" y1="130" x2="160" y2="256" stroke="#C9A97A" stroke-width="1.5"/><g style="cursor:pointer" onclick="simNodeClick(\'지수\',\'케어 중심 아동\',\'🧒\',\'#EDF4F2\',\'활동 12회\',\'18건\')"><circle cx="160" cy="130" r="24" fill="#1D9E75"/><circle cx="160" cy="130" r="20" fill="#EDF4F2"/><text x="160" y="126" text-anchor="middle" font-size="14">🧒</text><text x="160" y="138" text-anchor="middle" font-size="9" font-weight="600" fill="#2B3F5C">지수</text></g><g style="cursor:pointer" onclick="simNodeClick(\'어머니\',\'주 보호자\',\'👩\',\'#EDF4F2\',\'메모 5건\',\'5건\')"><circle cx="160" cy="36" r="17" fill="#1D9E75"/><circle cx="160" cy="36" r="13" fill="#EDF4F2"/><text x="160" y="32" text-anchor="middle" font-size="11">👩</text><text x="160" y="41" text-anchor="middle" font-size="8" fill="#2B3F5C">어머니</text></g><g style="cursor:pointer" onclick="simNodeClick(\'아버지\',\'보조 보호자\',\'👨\',\'#EDF4F2\',\'방문 2회\',\'1건\')"><circle cx="76" cy="76" r="14" fill="#7BA99A"/><circle cx="76" cy="76" r="10" fill="#EDF4F2"/><text x="76" y="72" text-anchor="middle" font-size="10">👨</text><text x="76" y="81" text-anchor="middle" font-size="7" fill="#2B3F5C">아버지</text></g><g style="cursor:pointer" onclick="simNodeClick(\'할머니\',\'가족·조부모\',\'👵\',\'#EDF4F2\',\'방문 주 2회\',\'1건\')"><circle cx="244" cy="76" r="14" fill="#7BA99A"/><circle cx="244" cy="76" r="10" fill="#EDF4F2"/><text x="244" y="72" text-anchor="middle" font-size="10">👵</text><text x="244" y="81" text-anchor="middle" font-size="7" fill="#2B3F5C">할머니</text></g><g style="cursor:pointer" onclick="simNodeClick(\'김민준\',\'활동가 · 38.2°\',\'🎒\',\'#EEF2F8\',\'활동 5회\',\'5건\')"><circle cx="54" cy="174" r="17" fill="#4A6FA5"/><circle cx="54" cy="174" r="13" fill="#EEF2F8"/><text x="54" y="170" text-anchor="middle" font-size="11">🎒</text><text x="54" y="179" text-anchor="middle" font-size="7" fill="#2B3F5C">김민준</text></g><g style="cursor:pointer" onclick="simNodeClick(\'이서연\',\'활동가 · 37.8°\',\'🎒\',\'#EEF2F8\',\'활동 3회\',\'3건\')"><circle cx="266" cy="174" r="17" fill="#4A6FA5"/><circle cx="266" cy="174" r="13" fill="#EEF2F8"/><text x="266" y="170" text-anchor="middle" font-size="11">🎒</text><text x="266" y="179" text-anchor="middle" font-size="7" fill="#2B3F5C">이서연</text></g><g style="cursor:pointer" onclick="simNodeClick(\'박선생님\',\'특수교사\',\'📚\',\'#E8ECF2\',\'메모 3건\',\'3건\')"><circle cx="96" cy="236" r="17" fill="#2B3F5C"/><circle cx="96" cy="236" r="13" fill="#E8ECF2"/><text x="96" y="232" text-anchor="middle" font-size="11">📚</text><text x="96" y="241" text-anchor="middle" font-size="7" fill="#2B3F5C">박선생님</text></g><g style="cursor:pointer" onclick="simNodeClick(\'최선생님\',\'언어치료사\',\'🩺\',\'#E8ECF2\',\'치료 주 2회\',\'4건\')"><circle cx="224" cy="236" r="17" fill="#2B3F5C"/><circle cx="224" cy="236" r="13" fill="#E8ECF2"/><text x="224" y="232" text-anchor="middle" font-size="11">🩺</text><text x="224" y="241" text-anchor="middle" font-size="7" fill="#2B3F5C">최선생님</text></g><g style="cursor:pointer" onclick="simNodeClick(\'이담당자\',\'복지관 담당\',\'🏛️\',\'#F5ECD8\',\'면담 1회\',\'1건\')"><circle cx="160" cy="256" r="15" fill="#C9A97A"/><circle cx="160" cy="256" r="11" fill="#F5ECD8"/><text x="160" y="253" text-anchor="middle" font-size="10">🏛️</text><text x="160" y="262" text-anchor="middle" font-size="7" fill="#2B3F5C">복지관</text></g><text x="72" y="196" text-anchor="middle" font-size="8" fill="#4A6FA5" font-weight="600">38.2°</text><text x="284" y="196" text-anchor="middle" font-size="8" fill="#4A6FA5" font-weight="600">37.8°</text></svg><div style="display:flex;gap:10px;flex-wrap:wrap;padding:8px 12px;background:rgba(255,255,255,.6);border-top:1px solid var(--border);"><span style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--mid);"><span style="width:8px;height:8px;border-radius:50%;background:#1D9E75;display:inline-block;"></span>가족</span><span style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--mid);"><span style="width:8px;height:8px;border-radius:50%;background:#4A6FA5;display:inline-block;"></span>활동가</span><span style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--mid);"><span style="width:8px;height:8px;border-radius:50%;background:#2B3F5C;display:inline-block;"></span>전문가</span><span style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--mid);"><span style="width:8px;height:8px;border-radius:50%;background:#C9A97A;display:inline-block;"></span>기관</span></div></div><div class="sim-node-strip" id="sim-strip" style="margin:0 14px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;" id="strip-avatar"></div><div><div style="font-size:13px;font-weight:700;color:var(--navy);" id="strip-name"></div><div style="font-size:11px;color:var(--mid);" id="strip-role"></div></div></div><button onclick="simNodeDetail()" style="padding:6px 14px;background:var(--cta-light);color:var(--cta-deep);border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">상세 보기</button></div><div class="sim-node-detail" id="sim-node-detail" style="margin:0 14px 14px;"><div id="sim-node-detail-body"></div></div>';
+  el.innerHTML = '<div style="padding:14px 14px 0;"><div class="sim-topbar"><span class="sim-screen-title">케어 네트워크</span><span style="font-size:12px;color:var(--mid);">연결된 관계자 7명</span></div><p style="font-size:12px;color:var(--mid);margin-bottom:10px;">노드를 탭해 관계자 정보를 확인해보세요.</p></div><div style="position:relative;background:var(--sage-light);margin:0 14px;border-radius:14px;overflow:hidden;"><svg viewBox="0 0 320 280" style="width:100%;display:block;"><line x1="160" y1="130" x2="160" y2="44" stroke="#4E7A25" stroke-width="1.5"/><line x1="160" y1="130" x2="76" y2="84" stroke="#4E7A25" stroke-width="1.5"/><line x1="160" y1="130" x2="244" y2="84" stroke="#4E7A25" stroke-width="1.5"/><line x1="160" y1="130" x2="54" y2="174" stroke="#4A6FA5" stroke-width="1.5"/><line x1="160" y1="130" x2="266" y2="174" stroke="#4A6FA5" stroke-width="1.5"/><line x1="160" y1="130" x2="96" y2="236" stroke="#2A3820" stroke-width="1.5"/><line x1="160" y1="130" x2="224" y2="236" stroke="#2A3820" stroke-width="1.5"/><line x1="160" y1="130" x2="160" y2="256" stroke="#7A5C3A" stroke-width="1.5"/><g style="cursor:pointer" onclick="simNodeClick(\'지수\',\'케어 중심 아동\',\'🧒\',\'#EEF2E0\',\'활동 12회\',\'18건\')"><circle cx="160" cy="130" r="24" fill="#4E7A25"/><circle cx="160" cy="130" r="20" fill="#EEF2E0"/><text x="160" y="126" text-anchor="middle" font-size="14">🧒</text><text x="160" y="138" text-anchor="middle" font-size="9" font-weight="600" fill="#2A3820">지수</text></g><g style="cursor:pointer" onclick="simNodeClick(\'어머니\',\'주 보호자\',\'👩\',\'#EEF2E0\',\'메모 5건\',\'5건\')"><circle cx="160" cy="36" r="17" fill="#4E7A25"/><circle cx="160" cy="36" r="13" fill="#EEF2E0"/><text x="160" y="32" text-anchor="middle" font-size="11">👩</text><text x="160" y="41" text-anchor="middle" font-size="8" fill="#2A3820">어머니</text></g><g style="cursor:pointer" onclick="simNodeClick(\'아버지\',\'보조 보호자\',\'👨\',\'#EEF2E0\',\'방문 2회\',\'1건\')"><circle cx="76" cy="76" r="14" fill="#8A9A5B"/><circle cx="76" cy="76" r="10" fill="#EEF2E0"/><text x="76" y="72" text-anchor="middle" font-size="10">👨</text><text x="76" y="81" text-anchor="middle" font-size="7" fill="#2A3820">아버지</text></g><g style="cursor:pointer" onclick="simNodeClick(\'할머니\',\'가족·조부모\',\'👵\',\'#EEF2E0\',\'방문 주 2회\',\'1건\')"><circle cx="244" cy="76" r="14" fill="#8A9A5B"/><circle cx="244" cy="76" r="10" fill="#EEF2E0"/><text x="244" y="72" text-anchor="middle" font-size="10">👵</text><text x="244" y="81" text-anchor="middle" font-size="7" fill="#2A3820">할머니</text></g><g style="cursor:pointer" onclick="simNodeClick(\'김민준\',\'활동가 · 🌳 나무\',\'🎒\',\'#E8EFF8\',\'활동 5회\',\'5건\')"><circle cx="54" cy="174" r="17" fill="#4A6FA5"/><circle cx="54" cy="174" r="13" fill="#E8EFF8"/><text x="54" y="170" text-anchor="middle" font-size="11">🎒</text><text x="54" y="179" text-anchor="middle" font-size="7" fill="#2A3820">김민준</text></g><g style="cursor:pointer" onclick="simNodeClick(\'이서연\',\'활동가 · 🌱 새싹\',\'🎒\',\'#E8EFF8\',\'활동 3회\',\'3건\')"><circle cx="266" cy="174" r="17" fill="#4A6FA5"/><circle cx="266" cy="174" r="13" fill="#E8EFF8"/><text x="266" y="170" text-anchor="middle" font-size="11">🎒</text><text x="266" y="179" text-anchor="middle" font-size="7" fill="#2A3820">이서연</text></g><g style="cursor:pointer" onclick="simNodeClick(\'박선생님\',\'특수교사\',\'📚\',\'#EAF0E0\',\'메모 3건\',\'3건\')"><circle cx="96" cy="236" r="17" fill="#2A3820"/><circle cx="96" cy="236" r="13" fill="#EAF0E0"/><text x="96" y="232" text-anchor="middle" font-size="11">📚</text><text x="96" y="241" text-anchor="middle" font-size="7" fill="#2A3820">박선생님</text></g><g style="cursor:pointer" onclick="simNodeClick(\'최선생님\',\'언어치료사\',\'🩺\',\'#EAF0E0\',\'치료 주 2회\',\'4건\')"><circle cx="224" cy="236" r="17" fill="#2A3820"/><circle cx="224" cy="236" r="13" fill="#EAF0E0"/><text x="224" y="232" text-anchor="middle" font-size="11">🩺</text><text x="224" y="241" text-anchor="middle" font-size="7" fill="#2A3820">최선생님</text></g><g style="cursor:pointer" onclick="simNodeClick(\'이담당자\',\'복지관 담당\',\'🏛️\',\'#F2E8DA\',\'면담 1회\',\'1건\')"><circle cx="160" cy="256" r="15" fill="#7A5C3A"/><circle cx="160" cy="256" r="11" fill="#F2E8DA"/><text x="160" y="253" text-anchor="middle" font-size="10">🏛️</text><text x="160" y="262" text-anchor="middle" font-size="7" fill="#2A3820">복지관</text></g><text x="72" y="196" text-anchor="middle" font-size="8" fill="#4A6FA5" font-weight="600">🌳</text><text x="284" y="196" text-anchor="middle" font-size="8" fill="#4A6FA5" font-weight="600">🌱</text></svg><div style="display:flex;gap:10px;flex-wrap:wrap;padding:8px 12px;background:rgba(255,255,255,.6);border-top:1px solid var(--border);"><span style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--mid);"><span style="width:8px;height:8px;border-radius:50%;background:#4E7A25;display:inline-block;"></span>가족</span><span style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--mid);"><span style="width:8px;height:8px;border-radius:50%;background:#4A6FA5;display:inline-block;"></span>활동가</span><span style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--mid);"><span style="width:8px;height:8px;border-radius:50%;background:#2A3820;display:inline-block;"></span>전문가</span><span style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--mid);"><span style="width:8px;height:8px;border-radius:50%;background:#7A5C3A;display:inline-block;"></span>기관</span></div></div><div class="sim-node-strip" id="sim-strip" style="margin:0 14px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;" id="strip-avatar"></div><div><div style="font-size:13px;font-weight:700;color:var(--navy);" id="strip-name"></div><div style="font-size:11px;color:var(--mid);" id="strip-role"></div></div></div><button onclick="simNodeDetail()" style="padding:6px 14px;background:var(--cta-light);color:var(--cta-deep);border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">상세 보기</button></div><div class="sim-node-detail" id="sim-node-detail" style="margin:0 14px 14px;"><div id="sim-node-detail-body"></div></div>';
 }
 var _curNode = {};
 function simNodeClick(name, role, emoji, bg, act, memo) {
@@ -483,33 +494,145 @@ function simNodeDetail() {
   document.getElementById('sim-node-detail-body').innerHTML = '<div style="padding:12px 14px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><div style="width:36px;height:36px;border-radius:50%;background:' + _curNode.bg + ';display:flex;align-items:center;justify-content:center;font-size:18px;">' + _curNode.emoji + '</div><div><div style="font-size:13px;font-weight:700;color:var(--navy);">' + _curNode.name + '</div><div style="font-size:11px;color:var(--mid);">' + _curNode.role + '</div></div></div><div style="display:flex;gap:10px;margin-bottom:12px;"><div style="flex:1;background:var(--ivory);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border);"><div style="font-size:16px;font-weight:700;color:var(--navy);">' + _curNode.act.split(' ')[0] + '</div><div style="font-size:10px;color:var(--mid);">' + _curNode.act.replace(/^\S+\s/, '') + '</div></div><div style="flex:1;background:var(--ivory);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border);"><div style="font-size:16px;font-weight:700;color:var(--navy);">' + _curNode.memo + '</div><div style="font-size:10px;color:var(--mid);">기록 메모</div></div></div><div style="font-size:11px;color:var(--cta-deep);background:var(--cta-light);border-radius:8px;padding:8px 12px;">✓ 연락처·알림장·공개 설정을 앱에서 확인할 수 있어요</div></div>';
 }
 
-/* ── 신뢰 온도 ── */
+/* ── 신뢰 성장 (자연 컨셉) ──
+   활동가: 씨앗→새싹→묘목→나무→고목
+   치료실: 씨앗→새싹→꽃봉오리→꽃
+   기관:   돌멩이→돌→바위
+*/
+var _growthStages = {
+  activist: [
+    {pts:0,   icon:'🌰', label:'씨앗',  desc:'신뢰 쌓기 시작', color:'#8A6A40'},
+    {pts:20,  icon:'🌱', label:'새싹',  desc:'첫 활동 완료',   color:'#5A8A30'},
+    {pts:50,  icon:'🌿', label:'묘목',  desc:'꾸준히 성장 중', color:'#4E7A25'},
+    {pts:100, icon:'🌳', label:'나무',  desc:'신뢰 활동가',    color:'#335212'},
+    {pts:200, icon:'🌲', label:'고목',  desc:'최고 신뢰 활동가',color:'#1E3A0A'}
+  ],
+  clinic: [
+    {pts:0,   icon:'🌰', label:'씨앗',    desc:'등록 완료',     color:'#8A6A40'},
+    {pts:15,  icon:'🌱', label:'새싹',    desc:'초기 기록 시작', color:'#5A8A30'},
+    {pts:40,  icon:'🌸', label:'꽃봉오리',desc:'성장 가속 중',  color:'#C45A8A'},
+    {pts:80,  icon:'🌺', label:'만개한 꽃',desc:'최고 치료실',  color:'#A03060'}
+  ],
+  institution: [
+    {pts:0,   icon:'🪨', label:'돌멩이', desc:'등록 기관',      color:'#7A7060'},
+    {pts:30,  icon:'🪨', label:'돌',     desc:'신뢰 기관',      color:'#5A5248'},
+    {pts:80,  icon:'⛰️', label:'바위',   desc:'공인 파트너',    color:'#3A3830'}
+  ]
+};
+
 function simTrust(el) {
-  el.innerHTML = '<div class="sim-scroll"><div class="sim-topbar"><span class="sim-screen-title">활동가 프로필</span></div><div style="text-align:center;padding:8px 0 12px;"><div style="width:52px;height:52px;border-radius:50%;background:var(--slate-light);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 8px;">🎒</div><div style="font-size:15px;font-weight:700;color:var(--navy);">김민준</div><div style="font-size:12px;color:var(--mid);">사회복지학과 3학년 · 신원 검증 ✓</div></div><div class="sim-temp-gauge" style="margin-bottom:12px;"><div style="display:flex;align-items:flex-end;gap:8px;margin-bottom:8px;"><span style="font-size:32px;font-weight:700;" id="temp-display">36.5°</span><span style="font-size:12px;margin-bottom:6px;" id="temp-grade">활동 가능</span></div><div style="height:8px;background:rgba(43,63,92,.12);border-radius:10px;overflow:hidden;margin-bottom:5px;"><div id="temp-bar" style="height:100%;border-radius:10px;background:linear-gradient(90deg,var(--slate),var(--cta),var(--amber));transition:width .5s ease;width:14%;"></div></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#92620B;"><span>35°</span><span>36.5°</span><span>37.5°</span><span>38.5°</span><span>40°</span></div></div><div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;">온도를 올려보세요</div><div style="display:flex;flex-direction:column;gap:7px;"><button data-val="0.2" data-lbl="활동 후기 ★5" onclick="addTemp(this)" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--ivory-card);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;"><span style="font-size:13px;color:var(--navy);">⭐ 활동 후기 ★5 받기</span><span style="font-size:13px;font-weight:700;color:var(--cta);">+0.2°</span></button><button data-val="0.3" data-lbl="재매칭 요청 받음" onclick="addTemp(this)" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--ivory-card);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;"><span style="font-size:13px;color:var(--navy);">🔄 재매칭 요청 받음</span><span style="font-size:13px;font-weight:700;color:var(--cta);">+0.3°</span></button><button data-val="0.5" data-lbl="자격증 등록" onclick="addTemp(this)" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--ivory-card);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;"><span style="font-size:13px;color:var(--navy);">🏅 자격증 등록하기</span><span style="font-size:13px;font-weight:700;color:var(--cta);">+0.5°</span></button><button data-val="-1.0" data-lbl="노쇼" onclick="addTemp(this)" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--ivory-card);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;"><span style="font-size:13px;color:var(--navy);">😬 노쇼 (당일 취소)</span><span style="font-size:13px;font-weight:700;color:#8B2800;">-1.0°</span></button></div><div style="margin-top:10px;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;">히스토리</div><div id="temp-history" style="display:flex;flex-direction:column;gap:3px;"></div></div>';
-  window._simTemp = 36.5;
-  updateTempDisplay();
+  window._trustPts = 12;
+  window._trustType = 'activist';
+  el.innerHTML = _renderTrustSim();
 }
-function addTemp(btn) {
-  var val = parseFloat(btn.dataset.val);
-  window._simTemp = Math.max(35, Math.min(40, window._simTemp + val));
+
+function _renderTrustSim() {
+  var type = window._trustType || 'activist';
+  var pts = window._trustPts || 0;
+  var stages = _growthStages[type];
+  var stage = stages[0];
+  for (var i = stages.length - 1; i >= 0; i--) {
+    if (pts >= stages[i].pts) { stage = stages[i]; break; }
+  }
+  var nextStage = null;
+  for (var j = 0; j < stages.length; j++) {
+    if (stages[j].pts > pts) { nextStage = stages[j]; break; }
+  }
+  var maxPts = stages[stages.length-1].pts;
+  var pct = Math.min(100, Math.round(pts / maxPts * 100));
+  var segW = 100 / (stages.length - 1);
+
+  var typeLabels = {activist:'🎒 활동가', clinic:'🩺 치료실', institution:'🏛️ 기관'};
+  var typeBtns = Object.keys(typeLabels).map(function(k) {
+    var active = k === type ? 'background:var(--cta);color:#fff;border-color:var(--cta);' : '';
+    return '<button onclick="setTrustType(\'' + k + '\')" style="flex:1;padding:7px 6px;border-radius:8px;border:1.5px solid var(--border);background:none;color:var(--mid);font-size:11px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;transition:all .2s;' + active + '">' + typeLabels[k] + '</button>';
+  }).join('');
+
+  var stageIcons = stages.map(function(s, idx) {
+    var reached = pts >= s.pts;
+    var isNow = s === stage;
+    return '<div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;">'
+      + '<div style="font-size:' + (isNow ? '22' : '16') + 'px;transition:font-size .3s;filter:' + (reached ? 'none' : 'grayscale(1) opacity(.4)') + ';">' + s.icon + '</div>'
+      + '<div style="font-size:9px;font-weight:' + (isNow ? '700' : '500') + ';color:' + (reached ? s.color : 'var(--mid)') + ';text-align:center;">' + s.label + '</div>'
+      + '</div>';
+  }).join('');
+
+  var actions = [
+    {val:5,  neg:false, lbl:'⭐ 활동 후기 ★5 받기'},
+    {val:10, neg:false, lbl:'🔄 재매칭 요청 받음'},
+    {val:20, neg:false, lbl:'🏅 자격증 등록하기'},
+    {val:-15,neg:true,  lbl:'😬 노쇼 (당일 취소)'}
+  ];
+  var actionBtns = actions.map(function(a) {
+    return '<button data-val="' + a.val + '" data-lbl="' + a.lbl + '" onclick="addTrustPts(this)" style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--ivory-card);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;width:100%;"><span style="font-size:13px;color:var(--navy);">' + a.lbl + '</span><span style="font-size:13px;font-weight:700;color:' + (a.neg ? '#7A2800' : 'var(--cta)') + ';">' + (a.neg ? '' : '+') + a.val + 'pt</span></button>';
+  }).join('');
+
+  var nextTip = nextStage
+    ? '<div style="font-size:11px;color:var(--cta-deep);background:var(--cta-light);border-radius:8px;padding:8px 12px;margin-top:8px;">다음 단계 <strong>' + nextStage.icon + ' ' + nextStage.label + '</strong>까지 <strong>' + (nextStage.pts - pts) + 'pt</strong> 남았어요</div>'
+    : '<div style="font-size:11px;color:var(--cta-deep);background:var(--cta-light);border-radius:8px;padding:8px 12px;margin-top:8px;">🎉 최고 단계 달성! 최고의 신뢰를 받고 있어요</div>';
+
+  return '<div class="sim-scroll">'
+    + '<div class="sim-topbar"><span class="sim-screen-title">신뢰 성장 프로필</span><span style="font-size:11px;background:var(--cta-light);color:var(--cta-deep);padding:3px 9px;border-radius:20px;font-weight:600;">' + pts + 'pt</span></div>'
+    + '<div style="display:flex;gap:6px;margin-bottom:12px;">' + typeBtns + '</div>'
+    + '<div style="text-align:center;padding:8px 0 14px;">'
+    + '<div style="font-size:48px;margin-bottom:4px;transition:all .4s;">' + stage.icon + '</div>'
+    + '<div style="font-size:16px;font-weight:700;color:' + stage.color + ';">' + stage.label + '</div>'
+    + '<div style="font-size:12px;color:var(--mid);margin-top:2px;">김민준 · ' + stage.desc + '</div>'
+    + '</div>'
+    + '<div style="background:var(--ivory-card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:12px;">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">'
+    + '<span style="font-size:12px;font-weight:700;color:var(--navy);">성장 단계</span>'
+    + '<span style="font-size:12px;font-weight:700;color:var(--cta);">' + pct + '%</span>'
+    + '</div>'
+    + '<div style="height:8px;background:rgba(80,100,50,.1);border-radius:10px;overflow:hidden;margin-bottom:10px;">'
+    + '<div id="trust-bar" style="height:100%;border-radius:10px;background:linear-gradient(90deg,var(--sage-mid),var(--cta),var(--olive));transition:width .5s ease;width:' + pct + '%;"></div>'
+    + '</div>'
+    + '<div style="display:flex;justify-content:space-between;">' + stageIcons + '</div>'
+    + nextTip
+    + '</div>'
+    + '<div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;">활동을 쌓아 성장시켜요</div>'
+    + '<div style="display:flex;flex-direction:column;gap:7px;">' + actionBtns + '</div>'
+    + '<div style="margin-top:10px;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;">히스토리</div>'
+    + '<div id="trust-history" style="display:flex;flex-direction:column;gap:3px;"></div>'
+    + '</div>';
+}
+
+function setTrustType(type) {
+  window._trustType = type;
+  window._trustPts = 12;
+  var el = document.getElementById('sim-body');
+  el.innerHTML = _renderTrustSim();
+}
+
+function addTrustPts(btn) {
+  var val = parseInt(btn.dataset.val);
+  window._trustPts = Math.max(0, (window._trustPts || 0) + val);
   btn.style.opacity = '.4'; btn.disabled = true;
-  var hist = document.getElementById('temp-history');
+  var hist = document.getElementById('trust-history');
   var row = document.createElement('div');
   row.style.cssText = 'display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--border);';
-  row.innerHTML = '<span style="color:var(--mid);">' + btn.dataset.lbl + '</span><span style="font-weight:700;color:' + (val > 0 ? 'var(--cta)' : '#8B2800') + '">' + (val > 0 ? '+' : '') + val.toFixed(1) + '°</span>';
+  row.innerHTML = '<span style="color:var(--mid);">' + btn.dataset.lbl + '</span><span style="font-weight:700;color:' + (val > 0 ? 'var(--cta)' : '#7A2800') + '">' + (val > 0 ? '+' : '') + val + 'pt</span>';
   hist.prepend(row);
-  updateTempDisplay();
+  /* Re-render the growth display only */
+  var stages = _growthStages[window._trustType];
+  var pts = window._trustPts;
+  var stage = stages[0];
+  for (var i = stages.length - 1; i >= 0; i--) {
+    if (pts >= stages[i].pts) { stage = stages[i]; break; }
+  }
+  var nextStage = null;
+  for (var j = 0; j < stages.length; j++) {
+    if (stages[j].pts > pts) { nextStage = stages[j]; break; }
+  }
+  var maxPts = stages[stages.length-1].pts;
+  var pct = Math.min(100, Math.round(pts / maxPts * 100));
+  var bar = document.getElementById('trust-bar');
+  if (bar) bar.style.width = pct + '%';
 }
-function updateTempDisplay() {
-  var t = window._simTemp || 36.5;
-  document.getElementById('temp-display').textContent = t.toFixed(1) + '°';
-  document.getElementById('temp-bar').style.width = ((t - 35) / (40 - 35) * 100).toFixed(0) + '%';
-  var grades = [[38.5,'베스트 활동가','#D85A30'],[37.5,'신뢰 활동가','#EF9F27'],[36.5,'활동 가능','#1D9E75'],[35,'주의','#4A6FA5'],[0,'활동 정지','#6B7280']];
-  var found = grades.find(function(g) { return t >= g[0]; }) || grades[grades.length - 1];
-  document.getElementById('temp-grade').textContent = found[1];
-  document.getElementById('temp-grade').style.color = found[2];
-  document.getElementById('temp-display').style.color = found[2];
-}
+
+/* legacy stubs no longer needed but kept to avoid reference errors */
+function addTemp() {}
+function updateTempDisplay() {}
 
 /* ── 공유 캘린더 ── */
 function simCalendar(el) {
@@ -519,7 +642,7 @@ function simCalendar(el) {
     '8':'background:var(--cta-light);color:var(--cta-deep);font-weight:700;',
     '13':'background:var(--slate-light);color:var(--slate);font-weight:700;',
     '15':'background:var(--cta-light);color:var(--cta-deep);font-weight:700;',
-    '16':'background:var(--coral-light);color:#8B2800;font-weight:700;',
+    '16':'background:var(--coral-light);color:#7A2800;font-weight:700;',
     '20':'background:var(--slate-light);color:var(--slate);font-weight:700;',
     '22':'background:var(--cta-light);color:var(--cta-deep);font-weight:700;'
   };
@@ -545,11 +668,11 @@ function simCalendar(el) {
     + '<div style="background:var(--slate-light);padding:8px 12px;border-bottom:1px solid var(--border);"><div style="font-size:11px;font-weight:700;color:var(--slate);">📅 언어치료 · 화·목 오후 2시</div><div style="font-size:10px;color:var(--mid);margin-top:1px;">최선생님 등록 · 케어팀 공유됨</div></div>'
     + '<div style="padding:8px 12px;font-size:11px;color:var(--navy);">○○ 발달센터 · 주 2회 정기 세션</div></div>'
     + '<div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:7px;">'
-    + '<div style="background:var(--cta-light);padding:8px 12px;border-bottom:1px solid #9FE1CB;"><div style="font-size:11px;font-weight:700;color:var(--cta-deep);">🎒 활동가 활동 · 5/22 오후 3시</div><div style="font-size:10px;color:var(--cta-deep);margin-top:1px;">양측 확인 ✓ · 어머니·김민준 모두 저장</div></div>'
+    + '<div style="background:var(--cta-light);padding:8px 12px;border-bottom:1px solid #9FD0A0;"><div style="font-size:11px;font-weight:700;color:var(--cta-deep);">🎒 활동가 활동 · 5/22 오후 3시</div><div style="font-size:10px;color:var(--cta-deep);margin-top:1px;">양측 확인 ✓ · 어머니·김민준 모두 저장</div></div>'
     + '<div style="padding:8px 12px;font-size:11px;color:var(--navy);">김민준 활동가 · 공원 산책 · 마포구</div></div>'
     + '<div id="cal-events-list">'
     + '<div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:7px;">'
-    + '<div style="background:var(--coral-light);padding:8px 12px;border-bottom:1px solid #F5C4B3;"><div style="font-size:11px;font-weight:700;color:#8B2800;">🤧 특이사항 · 5/16</div><div style="font-size:10px;color:#8B2800;margin-top:1px;">어머니 등록 · 케어팀 전체 확인 가능</div></div>'
+    + '<div style="background:var(--coral-light);padding:8px 12px;border-bottom:1px solid #F5C4B3;"><div style="font-size:11px;font-weight:700;color:#7A2800;">🤧 특이사항 · 5/16</div><div style="font-size:10px;color:#7A2800;margin-top:1px;">어머니 등록 · 케어팀 전체 확인 가능</div></div>'
     + '<div style="padding:8px 12px;font-size:11px;color:var(--navy);">감기 증상. 콧물·미열. 치료 일정 조정 필요.</div></div>'
     + '</div>'
     + '<button onclick="showCalAdd()" id="cal-add-btn" style="width:100%;padding:9px;border-radius:10px;border:1.5px dashed var(--border);background:none;font-size:12px;font-weight:600;color:var(--mid);cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;margin-bottom:8px;">+ 일정 또는 특이사항 추가</button>'
@@ -557,7 +680,7 @@ function simCalendar(el) {
     + '<div style="display:flex;gap:6px;margin-bottom:7px;" id="cal-type-btns">'
     + '<button onclick="setCalType(this,\'치료\',\'var(--slate-light)\',\'var(--slate)\',\'📅\')" style="flex:1;padding:6px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--mid);font-size:11px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">📅 치료</button>'
     + '<button onclick="setCalType(this,\'활동\',\'var(--cta-light)\',\'var(--cta-deep)\',\'🎒\')" style="flex:1;padding:6px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--mid);font-size:11px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">🎒 활동</button>'
-    + '<button onclick="setCalType(this,\'특이사항\',\'var(--coral-light)\',\'#8B2800\',\'🤧\')" style="flex:1;padding:6px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--mid);font-size:11px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">🤧 특이사항</button>'
+    + '<button onclick="setCalType(this,\'특이사항\',\'var(--coral-light)\',\'#7A2800\',\'🤧\')" style="flex:1;padding:6px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--mid);font-size:11px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">🤧 특이사항</button>'
     + '</div>'
     + '<textarea id="cal-text" placeholder="내용을 입력하세요" style="width:100%;padding:9px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--ivory);font-size:12px;color:var(--navy);resize:none;min-height:52px;font-family:\'Noto Sans KR\',sans-serif;line-height:1.6;margin-bottom:7px;"></textarea>'
     + '<div style="display:flex;gap:6px;justify-content:flex-end;">'
@@ -566,7 +689,7 @@ function simCalendar(el) {
     + '</div></div></div>';
 }
 
-var _calCurrent = {label:'특이사항', bg:'var(--coral-light)', color:'#8B2800', emoji:'🤧'};
+var _calCurrent = {label:'특이사항', bg:'var(--coral-light)', color:'#7A2800', emoji:'🤧'};
 function showCalAdd() {
   document.getElementById('cal-add-form').style.display = 'block';
   document.getElementById('cal-add-btn').style.display = 'none';
@@ -608,17 +731,17 @@ function simAI(el) {
     + '<div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;">감정 분포 <span style="font-size:11px;font-weight:500;color:var(--cta);">긍정 74%</span></div>'
     + '<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">' + emoHTML + '</div>'
     + '<div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;">사회성 발달 지표</div>' + progHTML
-    + '<div style="background:var(--coral-light);border-radius:12px;padding:12px 14px;margin-top:8px;border-left:3px solid var(--coral);"><div style="font-size:11px;font-weight:700;color:#8B2800;margin-bottom:4px;">🤧 건강 패턴 인사이트</div><div style="font-size:12px;color:#6B2000;line-height:1.6;">지난 6개월 간 <strong>약 1.5개월 간격</strong>으로 감기 증상 반복. 감기 이후 2~3일간 짜증 지수 상승 패턴 확인됨.</div></div>'
+    + '<div style="background:var(--coral-light);border-radius:12px;padding:12px 14px;margin-top:8px;border-left:3px solid var(--coral);"><div style="font-size:11px;font-weight:700;color:#7A2800;margin-bottom:4px;">🤧 건강 패턴 인사이트</div><div style="font-size:12px;color:#5A2000;line-height:1.6;">지난 6개월 간 <strong>약 1.5개월 간격</strong>으로 감기 증상 반복. 감기 이후 2~3일간 짜증 지수 상승 패턴 확인됨.</div></div>'
     + '<div style="background:var(--slate-light);border-radius:12px;padding:12px 14px;margin-top:8px;border-left:3px solid var(--slate);"><div style="font-size:11px;font-weight:700;color:var(--slate);margin-bottom:4px;">📅 이번 달 활동 요약</div><div style="font-size:12px;color:var(--navy);line-height:1.6;">야외 활동 <strong>4회</strong> · 언어치료 <strong>8회</strong> · 감기 <strong>1회</strong>. 야외 활동 있던 주 언어 시도 평균 2.1배 높음.</div></div>'
-    + '<div style="background:var(--sand-light);border-radius:12px;padding:12px 14px;margin-top:8px;border-left:3px solid var(--sand);"><div style="font-size:11px;font-weight:700;color:#7A5A2A;margin-bottom:4px;">✨ AI 추천 다음 활동</div><div style="font-size:13px;color:#5A3A00;line-height:1.6;">강아지 반응 데이터 기반 → <strong>동물원 소풍</strong>을 추천해요. 공원 산책 활동 효과 93점!</div></div>'
+    + '<div style="background:var(--sand-light);border-radius:12px;padding:12px 14px;margin-top:8px;border-left:3px solid var(--sand);"><div style="font-size:11px;font-weight:700;color:var(--brown);margin-bottom:4px;">✨ AI 추천 다음 활동</div><div style="font-size:13px;color:var(--olive);line-height:1.6;">강아지 반응 데이터 기반 → <strong>동물원 소풍</strong>을 추천해요. 공원 산책 활동 효과 93점!</div></div>'
     + '</div>';
 }
 
 /* ── 확인 메모 ── */
 function simMemo(el) {
-  el.innerHTML = '<div class="sim-scroll"><div class="sim-topbar"><span class="sim-screen-title">케어팀 확인</span><span id="memo-badge" style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--coral-light);color:#8B2800;">3건 대기</span></div><div style="font-size:12px;color:var(--mid);line-height:1.6;background:var(--ivory-card);border-radius:10px;padding:10px 12px;border:1px solid var(--border);margin-bottom:12px;">케어팀이 남긴 기록을 읽고, 동의하거나 다른 관점을 추가할 수 있어요.</div>'
-    + '<div class="sim-memo-card" id="mc1"><div style="background:var(--slate-light);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:24px;height:24px;border-radius:50%;background:var(--slate);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;">김</div><div><div style="font-size:12px;font-weight:700;color:var(--navy);">김민준</div><div style="font-size:10px;color:var(--mid);">활동가 · 5/12 오후 4:20</div></div></div><span style="font-size:10px;background:var(--slate-light);color:var(--slate);padding:2px 8px;border-radius:10px;border:1px solid #C5D2E6;font-weight:600;">활동 기록</span></div><div style="padding:10px 14px;"><div style="font-size:12px;color:var(--navy);line-height:1.65;background:var(--ivory);border-radius:8px;padding:9px 12px;margin-bottom:9px;">강아지를 보고 환하게 웃으며 <strong>"강아지!"</strong>라고 자발적으로 말했어요. 활동 내내 감정이 안정적이었어요.</div><div style="margin-bottom:9px;"><span style="font-size:10px;background:var(--cta-light);color:var(--cta-deep);padding:2px 8px;border-radius:20px;font-weight:600;margin-right:5px;">긍정 감정</span><span style="font-size:10px;background:var(--sage-light);color:#3A6B5E;padding:2px 8px;border-radius:20px;font-weight:600;">자발 발화</span></div><div style="display:flex;gap:7px;" id="mc1-actions"><button onclick="memoAgree(\'mc1\')" style="flex:1;background:var(--cta-light);color:var(--cta-deep);border:1px solid #9FE1CB;border-radius:10px;padding:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">✓ 맞아요</button><button onclick="memoDiff(\'mc1\')" style="flex:1;background:var(--amber-light);color:#92620B;border:1px solid #FAC775;border-radius:10px;padding:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">💬 다르게 봤어요</button></div><div id="mc1-input" style="display:none;margin-top:9px;"><textarea id="mc1-text" placeholder="귀가 후 어땠는지 적어주세요" style="width:100%;padding:9px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--ivory);font-size:12px;color:var(--navy);resize:none;min-height:60px;font-family:\'Noto Sans KR\',sans-serif;line-height:1.6;"></textarea><div style="display:flex;gap:7px;margin-top:7px;justify-content:flex-end;"><button onclick="document.getElementById(\'mc1-input\').style.display=\'none\'" style="padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:none;font-size:12px;color:var(--mid);cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">취소</button><button onclick="memoSubmit(\'mc1\')" style="padding:6px 14px;border-radius:8px;border:none;background:var(--cta);color:#fff;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">추가하기</button></div></div></div></div>'
-    + '<div class="sim-memo-card" id="mc2"><div style="background:var(--navy-light);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:24px;height:24px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;">최</div><div><div style="font-size:12px;font-weight:700;color:var(--navy);">최선생님</div><div style="font-size:10px;color:var(--mid);">언어치료사 · 5/8 오후 2:10</div></div></div><span style="font-size:10px;background:var(--navy-light);color:var(--navy);padding:2px 8px;border-radius:10px;border:1px solid #C5CFD9;font-weight:600;">치료 일지</span></div><div style="padding:10px 14px;"><div style="font-size:12px;color:var(--navy);line-height:1.65;background:var(--ivory);border-radius:8px;padding:9px 12px;margin-bottom:9px;"><strong>"강아지 있어"</strong> — 2어 조합 첫 성공! 자발적 발화 3개월 전 대비 <strong>+30%</strong>.</div><div style="display:flex;gap:7px;" id="mc2-actions"><button onclick="memoAgree(\'mc2\')" style="flex:1;background:var(--cta-light);color:var(--cta-deep);border:1px solid #9FE1CB;border-radius:10px;padding:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">✓ 맞아요</button><button onclick="memoDiff(\'mc2\')" style="flex:1;background:var(--amber-light);color:#92620B;border:1px solid #FAC775;border-radius:10px;padding:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">💬 다르게 봤어요</button></div><div id="mc2-input" style="display:none;margin-top:9px;"><textarea id="mc2-text" placeholder="귀가 후 어땠는지 적어주세요" style="width:100%;padding:9px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--ivory);font-size:12px;color:var(--navy);resize:none;min-height:60px;font-family:\'Noto Sans KR\',sans-serif;line-height:1.6;"></textarea><div style="display:flex;gap:7px;margin-top:7px;justify-content:flex-end;"><button onclick="document.getElementById(\'mc2-input\').style.display=\'none\'" style="padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:none;font-size:12px;color:var(--mid);cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">취소</button><button onclick="memoSubmit(\'mc2\')" style="padding:6px 14px;border-radius:8px;border:none;background:var(--cta);color:#fff;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">추가하기</button></div></div></div></div>'
+  el.innerHTML = '<div class="sim-scroll"><div class="sim-topbar"><span class="sim-screen-title">케어팀 확인</span><span id="memo-badge" style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--coral-light);color:#7A2800;">3건 대기</span></div><div style="font-size:12px;color:var(--mid);line-height:1.6;background:var(--ivory-card);border-radius:10px;padding:10px 12px;border:1px solid var(--border);margin-bottom:12px;">케어팀이 남긴 기록을 읽고, 동의하거나 다른 관점을 추가할 수 있어요.</div>'
+    + '<div class="sim-memo-card" id="mc1"><div style="background:var(--slate-light);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:24px;height:24px;border-radius:50%;background:var(--slate);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;">김</div><div><div style="font-size:12px;font-weight:700;color:var(--navy);">김민준</div><div style="font-size:10px;color:var(--mid);">활동가 · 5/12 오후 4:20</div></div></div><span style="font-size:10px;background:var(--slate-light);color:var(--slate);padding:2px 8px;border-radius:10px;border:1px solid #C5D2E6;font-weight:600;">활동 기록</span></div><div style="padding:10px 14px;"><div style="font-size:12px;color:var(--navy);line-height:1.65;background:var(--ivory);border-radius:8px;padding:9px 12px;margin-bottom:9px;">강아지를 보고 환하게 웃으며 <strong>"강아지!"</strong>라고 자발적으로 말했어요. 활동 내내 감정이 안정적이었어요.</div><div style="margin-bottom:9px;"><span style="font-size:10px;background:var(--cta-light);color:var(--cta-deep);padding:2px 8px;border-radius:20px;font-weight:600;margin-right:5px;">긍정 감정</span><span style="font-size:10px;background:var(--sage-light);color:#3A5C20;padding:2px 8px;border-radius:20px;font-weight:600;">자발 발화</span></div><div style="display:flex;gap:7px;" id="mc1-actions"><button onclick="memoAgree(\'mc1\')" style="flex:1;background:var(--cta-light);color:var(--cta-deep);border:1px solid #9FD0A0;border-radius:10px;padding:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">✓ 맞아요</button><button onclick="memoDiff(\'mc1\')" style="flex:1;background:var(--amber-light);color:var(--brown);border:1px solid #FAC775;border-radius:10px;padding:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">💬 다르게 봤어요</button></div><div id="mc1-input" style="display:none;margin-top:9px;"><textarea id="mc1-text" placeholder="귀가 후 어땠는지 적어주세요" style="width:100%;padding:9px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--ivory);font-size:12px;color:var(--navy);resize:none;min-height:60px;font-family:\'Noto Sans KR\',sans-serif;line-height:1.6;"></textarea><div style="display:flex;gap:7px;margin-top:7px;justify-content:flex-end;"><button onclick="document.getElementById(\'mc1-input\').style.display=\'none\'" style="padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:none;font-size:12px;color:var(--mid);cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">취소</button><button onclick="memoSubmit(\'mc1\')" style="padding:6px 14px;border-radius:8px;border:none;background:var(--cta);color:#fff;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">추가하기</button></div></div></div></div>'
+    + '<div class="sim-memo-card" id="mc2"><div style="background:var(--navy-light);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:24px;height:24px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;">최</div><div><div style="font-size:12px;font-weight:700;color:var(--navy);">최선생님</div><div style="font-size:10px;color:var(--mid);">언어치료사 · 5/8 오후 2:10</div></div></div><span style="font-size:10px;background:var(--navy-light);color:var(--navy);padding:2px 8px;border-radius:10px;border:1px solid #C5CFD9;font-weight:600;">치료 일지</span></div><div style="padding:10px 14px;"><div style="font-size:12px;color:var(--navy);line-height:1.65;background:var(--ivory);border-radius:8px;padding:9px 12px;margin-bottom:9px;"><strong>"강아지 있어"</strong> — 2어 조합 첫 성공! 자발적 발화 3개월 전 대비 <strong>+30%</strong>.</div><div style="display:flex;gap:7px;" id="mc2-actions"><button onclick="memoAgree(\'mc2\')" style="flex:1;background:var(--cta-light);color:var(--cta-deep);border:1px solid #9FD0A0;border-radius:10px;padding:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">✓ 맞아요</button><button onclick="memoDiff(\'mc2\')" style="flex:1;background:var(--amber-light);color:var(--brown);border:1px solid #FAC775;border-radius:10px;padding:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">💬 다르게 봤어요</button></div><div id="mc2-input" style="display:none;margin-top:9px;"><textarea id="mc2-text" placeholder="귀가 후 어땠는지 적어주세요" style="width:100%;padding:9px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--ivory);font-size:12px;color:var(--navy);resize:none;min-height:60px;font-family:\'Noto Sans KR\',sans-serif;line-height:1.6;"></textarea><div style="display:flex;gap:7px;margin-top:7px;justify-content:flex-end;"><button onclick="document.getElementById(\'mc2-input\').style.display=\'none\'" style="padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:none;font-size:12px;color:var(--mid);cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">취소</button><button onclick="memoSubmit(\'mc2\')" style="padding:6px 14px;border-radius:8px;border:none;background:var(--cta);color:#fff;font-size:12px;font-weight:700;cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;">추가하기</button></div></div></div></div>'
     + '</div>';
   window._memoPending = 3;
 }
